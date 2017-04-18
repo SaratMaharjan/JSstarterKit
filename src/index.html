@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
+		<% if (htmlWebpackPlugin.options.trackJSToken) { %>
+
+		<% } %>
+
 		<meta charset = "UTF-8">
 	</head>
 	<body>
@@ -13,10 +18,9 @@
 				<th>Name</th>
 			</thead>
 			<tbody id="users">
-				
+
 			</tbody>
 		</table>
 
-		<script src="bundle.js"></script>
 	</body>
 </html>
