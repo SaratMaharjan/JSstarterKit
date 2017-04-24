@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript development",
   "scripts": {
+		"postinstall": "typings install",
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node buildScripts/srcServer.js",

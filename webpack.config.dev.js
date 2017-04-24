@@ -23,7 +23,11 @@ export default {
 	module: {
 		loaders: [
 			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+			{test: /\.ts$/, exclude: /node_modules/, loaders: ['ts-loader']},
 			{test: /\.css$/, loaders: ['style', 'css']}
 		]
+	},
+	resolve: {
+		extensions: ["", ".ts", ".js"]
 	}
 }
