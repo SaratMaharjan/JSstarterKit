@@ -5,9 +5,6 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
-	debug: true,
-	devtool: 'source-map',
-	noInfo: false,
 	entry: {
 		vendor: path.resolve(__dirname, 'src/vendor'),
 		main: path.resolve(__dirname, 'src/index')
@@ -41,13 +38,46 @@ export default {
 			inject: true,
 			trackJSsToken: ' '
 		}),
-		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.UglifyJsPlugin()
 	],
 	module: {
-		loaders: [
-			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-			{test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap')}
+		rules: [{
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/
+			},
+			{
+				test: /\.css$/,
+				loader: ExtractTextPlugin.extract('css?sourceMap')
+			},
+			{
+				test: /\.(png|jpg|gif|svg)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]?[hash]'
+				}
+			},
+			{
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					loaders: {}
+					// other vue-loader options go here
+				}
+			}
 		]
-	}
-}
+	},
+	resolve: {
+		alias: {
+			'vue$': 'vue/dist/vue.esm.js'
+		}
+	},
+	devServer: {
+		historyApiFallback: true,
+		noInfo: true
+	},
+	performance: {
+		hints: false
+	},
+	devtool: 'source-map'
+};

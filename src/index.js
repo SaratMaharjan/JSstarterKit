@@ -16,7 +16,7 @@ getUsers().then(result => {
 			<td>${user.id}</td>
 			<td>${user.firstName}</td>
 			</tr>
-		`
+		`;
 	});
 
 	global.document.getElementById('users').innerHTML = userBody;
