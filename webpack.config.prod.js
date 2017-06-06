@@ -73,7 +73,6 @@ export default {
 			inject: true,
 			trackJSsToken: ' '
 		}),
-		new ExtractTextPlugin('./src/index.css'),
 		new webpack.optimize.UglifyJsPlugin()
 	],
 	resolve: {
