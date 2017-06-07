@@ -9,7 +9,7 @@ describe('first test', () => {
 	});
 });
 
-/*describe('index.html', () => {
+/* describe('index.html', () => {
 	it('should have h1 with users', (done) => {
 		const index = fs.readFileSync('./src/index.html', 'utf-8');
 		jsdom.env(index, (err, window) => {
@@ -19,4 +19,4 @@ describe('first test', () => {
 			window.close();
 		});
 	});
-});*/
+}); */

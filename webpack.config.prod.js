@@ -4,6 +4,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+const extractSass = new ExtractTextPlugin({
+	filename: '[name].[chunkhash].css',
+	disable: process.env.NODE_ENV === 'development'
+});
+
 export default {
 	target: 'web',
 	entry: {
@@ -23,10 +28,15 @@ export default {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: 'css-loader',
+				test: /\.scss$/,
+				use: extractSass.extract({
+					use: [{
+						loader: 'css-loader'
+					}, {
+						loader: 'sass-loader'
+					}],
+					// use style-loader in development
+					fallback: 'style-loader'
 				})
 			},
 			{
@@ -51,7 +61,7 @@ export default {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('[name].[contenthash].css'),
+		extractSass,
 		new WebpackMd5Hash(),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor'
@@ -77,7 +87,7 @@ export default {
 	],
 	resolve: {
 		alias: {
-			'vue$': 'vue/dist/vue.esm.js'
+			vue$: 'vue/dist/vue.esm.js'
 		}
 	},
 	devServer: {
