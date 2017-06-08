@@ -12,12 +12,9 @@ import config from '../webpack.config';
 
 const serverConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../config/server.json'), 'utf-8'));
 // eslint-disable-next-line space-infix-ops
-const env = process.env.NODE_ENV ||'production';
+const env = process.env.NODE_ENV ||'development';
 const port = serverConfig.port;
 const app = express();
-
-console.log(env);
-console.log(config.output.path);
 
 app.use(cors());
 
@@ -35,7 +32,6 @@ if (env === 'development') {
 }
 
 app.get('/', (req, res) => {
-	console.log(config.output.path);
 	res.sendFile(path.join(config.output.path, '/index.html'));
 });
 
