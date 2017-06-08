@@ -4,12 +4,12 @@
   "description": "JavaScript development",
   "scripts": {
     "postinstall": "",
-    "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
-    "open:src": "babel-node buildScripts/srcServer.js",
+    "prestart": "babel-node server/startMessage.js",
+    "start": "cross-env NODE_ENV=development npm-run-all --parallel security-check lint:watch test:watch start-mockapi serve",
+    "serve": "babel-node server/server.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "npm-run-all --parallel open:src localtunnel",
+    "share": "npm-run-all --parallel serve localtunnel",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
@@ -19,8 +19,8 @@
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
-    "build": "babel-node buildScripts/build.js",
-    "postbuild": "babel-node buildScripts/distServer.js",
+    "build": "cross-env NODE_ENV=production babel-node buildScripts/build.js",
+    "postbuild": "cross-env NODE_ENV=production npm-run-all --parallel start-mockapi serve",
     "deploy": "surge ./dist"
   },
   "author": "smhrjn",
@@ -36,6 +36,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.24.1",
+    "body-parser": "^1.17.2",
     "chai": "^4.0.2",
     "chalk": "^1.1.3",
     "cheerio": "^1.0.0-rc.1",
@@ -66,11 +67,16 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
     "surge": "^0.19.0",
+    "url": "^0.11.0",
     "vue-loader": "^12.2.1",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-md5-hash": "0.0.5"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   }
 }

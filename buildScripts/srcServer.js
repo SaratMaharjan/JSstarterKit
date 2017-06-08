@@ -1,15 +1,12 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable no-console */
+
 import express from 'express';
 import path from 'path';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import open from 'open';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import config from '../webpack.config.dev';
 // import cors from 'cors';
-
-/* eslint-disable no-console */
 
 const port = 3000;
 const app = express();

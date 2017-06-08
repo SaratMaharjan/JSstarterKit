@@ -2,6 +2,7 @@ import 'whatwg-fetch';
 import getBaseUrl from './baseUrl';
 
 const baseUrl = getBaseUrl();
+console.log(baseUrl); // eslint-disable-line
 
 function onSuccess(response) {
 	return response.json();
