@@ -41,7 +41,7 @@ jspm_packages
 
 # Folders
 .history
-bundle/
-ag/
-phpMyAdmin/
+bundle
+ag
+phpMyAdmin
 dist
