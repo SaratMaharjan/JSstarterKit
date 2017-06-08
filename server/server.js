@@ -6,6 +6,7 @@ import path from 'path';
 import open from 'open';
 import compression from 'compression';
 import cors from 'cors';
+import logger from 'morgan';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import config from '../webpack.config';
@@ -17,6 +18,7 @@ const port = serverConfig.port;
 const app = express();
 
 app.use(cors());
+app.use(logger('dev'));
 
 if (env === 'production') {
 	app.use(compression());
