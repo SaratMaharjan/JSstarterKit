@@ -1,15 +1,15 @@
 /* eslint-disable no-console */
 
-import fs from 'fs';
-import express from 'express';
-import path from 'path';
-import open from 'open';
-import compression from 'compression';
-import cors from 'cors';
-import logger from 'morgan';
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import config from '../webpack.config';
+const fs = require('fs');
+const express = require('express');
+const path = require('path');
+const open = require('open');
+const compression = require('compression');
+const cors = require('cors');
+const logger = require('morgan');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const config = require('../webpack.config');
 
 const serverConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../config/server.json'), 'utf-8'));
 // eslint-disable-next-line space-infix-ops

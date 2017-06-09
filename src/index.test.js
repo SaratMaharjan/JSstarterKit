@@ -1,7 +1,7 @@
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
-// import jsdom from 'jsdom';
-// import fs from 'fs';
+const { describe, it } = require('mocha');
+const { expect } = require('chai');
+// cosnt jsdom = require('jsdom');
+// const fs = require('fs');
 
 describe('first test', () => {
 	it('should pass', () => {
