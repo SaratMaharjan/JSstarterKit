@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WebpackMd5Hash from 'webpack-md5-hash';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 console.log(`Using configuration for : ${process.env.NODE_ENV}`);
 
@@ -13,7 +13,7 @@ const extractSass = new ExtractTextPlugin({
 	disable: process.env.NODE_ENV === 'development'
 });
 
-const webpackConfig = {
+module.exports = {
 	target: 'web',
 	entry: {
 		vendor: path.resolve(__dirname, 'src/vendor'),
@@ -109,9 +109,9 @@ const webpackConfig = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-	webpackConfig.devtool = 'source-map';
-	webpackConfig.output.path = path.resolve(__dirname, 'dist');
-	webpackConfig.plugins = (webpackConfig.plugins || []).concat([
+	module.exports.devtool = 'source-map';
+	module.exports.output.path = path.resolve(__dirname, 'dist');
+	module.exports.plugins = (module.exports.plugins || []).concat([
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: true,
 			compress: {
@@ -123,5 +123,3 @@ if (process.env.NODE_ENV === 'production') {
 		})
 	]);
 }
-
-export default webpackConfig;
