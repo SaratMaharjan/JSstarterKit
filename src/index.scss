@@ -1,9 +1,22 @@
 body {
 	font-family: Sans-Serif;
 }
-/*
+
 table th {
 	padding: 5px;
 	color: #abcdef;
 }
-*/
+
+:fullscreen a {
+	display: flex
+}
+
+a {
+	display: flex;
+}
+
+a {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+

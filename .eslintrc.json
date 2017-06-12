@@ -26,6 +26,7 @@
 				"indent": ["error", "tab"],
 				"no-tabs": 0,
 				"comma-dangle": "off",
-				"import/no-extraneous-dependencies": "off"
+				"import/no-extraneous-dependencies": "off",
+				"no-new": "off"
     }
 }

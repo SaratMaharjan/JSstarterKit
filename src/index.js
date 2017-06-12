@@ -1,6 +1,7 @@
 import './index.scss';
 
 import { getUsers, deleteUser } from './api/userApi';
+import './app';
 
 // import numeral from 'numeral';
 // const courseValue = numeral(1000).format('$0,0.00');

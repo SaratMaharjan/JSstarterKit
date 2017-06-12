@@ -1,12 +1,16 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, prefer-template */
 
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 console.log(`Using configuration for : ${process.env.NODE_ENV}`);
+
+const vueProject = true;
+const ngProject = false;
 
 const extractSass = new ExtractTextPlugin({
 	filename: '[name].[chunkhash].css',
@@ -22,7 +26,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'src'),
 		publicPath: '/',
-		filename: '[name].[chunkhash].js'
+		filename: (process.env.NODE_ENV === 'production' ? '[name].[chunkhash].js' : '[name].js')
 	},
 	module: {
 		rules: [
@@ -32,7 +36,7 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.scss$/,
+				test: /\.s?css$/,
 				use: extractSass.extract({
 					use: [{
 						loader: 'css-loader'
@@ -51,16 +55,6 @@ module.exports = {
 					loader: 'file-loader',
 					options: {
 						name: '[name].[chunckhash].[ext]'
-					}
-				}]
-			},
-			{
-				test: /\.vue$/,
-				use: [{
-					loader: 'vue-loader',
-					options: {
-						loaders: {}
-						// other vue-loader options go here
 					}
 				}]
 			}
@@ -91,15 +85,14 @@ module.exports = {
 		}),
 		new webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: process.env.NODE_ENV
+				NODE_ENV: '"' + process.env.NODE_ENV + '"'
 			}
-		})
+		}),
+		new CopyWebpackPlugin([{
+			from: path.join(path.resolve(__dirname, 'src'), 'images'),
+			to: 'images'
+		}])
 	],
-	resolve: {
-		alias: {
-			vue$: 'vue/dist/vue.esm.js'
-		}
-	},
 	devServer: {
 		historyApiFallback: true,
 		noInfo: true
@@ -124,4 +117,28 @@ if (process.env.NODE_ENV === 'production') {
 			minimize: true
 		})
 	]);
+}
+
+if (vueProject) {
+	module.exports.module.rules = (module.exports.module.rules || []).concat({
+		test: /\.vue$/,
+		use: [{
+			loader: 'vue-loader',
+			options: {
+				loaders: {},
+				postcss: [],
+				extractCSS: true
+				// other vue-loader options go here
+			}
+		}]
+	});
+	module.exports.resolve = {
+		alias: {
+			vue$: 'vue/dist/vue.esm.js'
+		}
+	};
+}
+
+if (ngProject) {
+	console.log('Need to add Angular Loader');
 }
