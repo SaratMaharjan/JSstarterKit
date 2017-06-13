@@ -1,5 +1,16 @@
-body {
+html, body {
 	font-family: Sans-Serif;
+  height: 100%;
+}
+
+html,
+body,
+input,
+textarea,
+buttons {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
 table th {
@@ -12,40 +23,10 @@ table th {
 }
 
 a {
-	display: flex;
-}
-
-a {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	display: flex;
 }
-
-
-// from Exapmle ----------------------------------------------------------------------------------
-
-/**
- * Body CSS
- */
-
-html,
-body {
-  height: 100%;
-}
-
-html,
-body,
-input,
-textarea,
-buttons {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-}
-
-
-/**
- * Sidebar CSS
- */
 
 #sidebar {
   background-color: #abcdef;
@@ -61,14 +42,8 @@ buttons {
     height: 100%;
     padding-top: 30px;
   }
-}
 
-
-/**
- * Content CSS
- */
-@media (min-width: 768px) {
   #content {
-    margin-left: 180px;
+  	margin-left: 180px;
   }
 }

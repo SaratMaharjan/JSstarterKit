@@ -1,6 +1,6 @@
 <template>
 
-	<div class="box is-info">
+	<div class="mui-panel mui--z2">
 		<p>
 			<slot></slot>
 		</p>
@@ -14,10 +14,6 @@
 	}
 </script>
 
-<style>
-	.box {
-		background: #abcdef;
-		padding: 10px;
-		margin: 10px;
-	}
+<style scoped>
+
 </style>
