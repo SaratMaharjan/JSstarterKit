@@ -7,8 +7,8 @@
     "prestart": "node server/startMessage.js",
     "start": "cross-env NODE_ENV=development npm-run-all --parallel security-check lint:watch test:watch start-mockapi serve",
     "serve": "node server/server.js",
-		"hot-webpack": "cross-env NODE_ENV=development npm-run-all --parallel start-mockapi webpack-server",
-    "webpack-server": "webpack-dev-server --hot --inline",
+    "hot-webpack": "cross-env NODE_ENV=development npm-run-all --parallel start-mockapi webpack-server",
+    "webpack-server": "webpack-dev-server --hot --inline --port 3000",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel serve localtunnel",
@@ -29,6 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
+    "muicss": "^0.9.16",
     "vue": "^2.3.3",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",

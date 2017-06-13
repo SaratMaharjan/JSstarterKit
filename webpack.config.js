@@ -89,8 +89,8 @@ module.exports = {
 			}
 		}),
 		new CopyWebpackPlugin([{
-			from: path.join(path.resolve(__dirname, 'src'), 'images'),
-			to: 'images'
+			from: path.join(path.resolve(__dirname, 'src'), 'assets'),
+			to: 'assets'
 		}])
 	],
 	devServer: {

@@ -27,6 +27,7 @@
 				"no-tabs": 0,
 				"comma-dangle": "off",
 				"import/no-extraneous-dependencies": "off",
-				"no-new": "off"
+				"no-new": "off",
+				"no-param-reassign": "off"
     }
 }

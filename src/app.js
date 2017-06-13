@@ -1,7 +1,7 @@
 // import Axios from 'axios';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import router from './routes';
+import router from './router/app';
 // import App from './views/app.vue';
 
 Vue.use(VueRouter);

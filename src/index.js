@@ -1,4 +1,5 @@
-import './index.scss';
+
+import './css/index.scss';
 
 import { getUsers, deleteUser } from './api/userApi';
 import './app';

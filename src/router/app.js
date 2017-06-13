@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router';
-import App from './views/app.vue';
-import About from './views/about.vue';
+import App from '../views/App.vue';
+import About from '../views/About.vue';
 
 const routes = [
 	{
