@@ -7,7 +7,7 @@
     "prestart": "node server/startMessage.js",
     "start": "cross-env NODE_ENV=development npm-run-all --parallel security-check lint:watch test:watch start-mockapi serve",
     "serve": "node server/server.js",
-    "hot-webpack": "cross-env NODE_ENV=development npm-run-all --parallel start-mockapi webpack-server",
+    "hot": "cross-env NODE_ENV=development npm-run-all --parallel start-mockapi webpack-server",
     "webpack-server": "webpack-dev-server --hot --inline --port 3000",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",

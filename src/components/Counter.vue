@@ -1,9 +1,11 @@
 <template>
 	<div class="counter" :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }" @mousemove="xCoordinate">
-		<h2>The Count: {{ count }} </h2>
+		<p>The Count: {{ count }}</p>
+
 		<p>Pixels across: {{ x }}</p>
+
 		<p>
-			<button @click="count += 1">Increment</button>
+			<button class="mui-btn mui-btn-raised mui-btn--primary" @click="count += 1">Increment</button>
 		</p>
 	</div>
 </template>
@@ -28,10 +30,14 @@
 
 <style scoped>
 .counter {
-	align-content: "center";
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
   width: 100%;
-  /*height: 100vh;*/
-  font-size: 30px;
-  transition: 0.2s background-color ease;
+  height: 5em;
+	margin: auto;
+	padding: 2px;
 }
 </style>

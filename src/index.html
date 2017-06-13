@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title>Javascript Starter Kit</title>
-		<meta charset = "UTF-8">
+<head>
+	<title>Javascript Starter Kit</title>
+	<meta charset="UTF-8">
 
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-		<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-	</head>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 
-	<body>
-		<div id="app">
+<body>
+	<div id="app">
 
-				<div id="sidebar">
-					<div class="mui--text-white mui--text-display1 mui--align-vertical">mui-css</div>
-				</div>
-				<div id="content" class="mui-container-fluid">
-					<div class="mui-row">
-
-						<div class="mui-col-sm-10 mui-col-sm-offset-1">
-							<div class="mui--text-headline"><h1>New Users</h1></div>
-							<div class="mui-divider"></div>
-							<br>
-							<div class="mui--text-black-54 mui-panel">
-								<table>
-									<thead>
-										<th>&nbsp;</th>
-										<th>id</th>
-										<th>Name</th>
-									</thead>
-									<tbody id="users">
-
-									</tbody>
-								</table>
-							</div>
-
-							<div class="mui-panel">
-								<router-view></router-view>
-								<ul class="mui-list--unstyled mui-list--inline">
-									<router-link to="/" exact tag="li">
-										<a>Home</a>
-									</router-link>
-									<router-link to="/about" tag="li">
-										<a>About</a>
-									</router-link>
-								</ul>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
+		<div id="sidebar">
+			<div class="mui--text-white mui--text-display1 mui--align-vertical">mui-css</div>
 		</div>
-	</body>
+		<div id="content" class="mui-container-fluid">
+			<div class="mui-row">
+
+				<div class="mui-col-sm-10 mui-col-sm-offset-1">
+					<div class="mui--text-headline">
+						<h1>New Users</h1>
+					</div>
+					<div class="mui-divider"></div>
+					<br>
+					<div class="mui--text-black-54 mui-panel">
+						<table>
+							<thead>
+								<th>&nbsp;</th>
+								<th>id</th>
+								<th>Name</th>
+							</thead>
+							<tbody id="users">
+
+							</tbody>
+						</table>
+					</div>
+
+					<div class="mui-panel">
+
+						<div class="mui-dropdown">
+							<button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+    						Options
+						    <span class="mui-caret"></span>
+  						</button>
+							<ul class="mui-dropdown__menu">
+								<router-link to="/" exact tag="li">
+									<a>Home</a>
+								</router-link>
+								<router-link to="/about" tag="li">
+									<a>About</a>
+								</router-link>
+
+							</ul>
+						</div>
+
+						<router-view></router-view>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
 
 </html>

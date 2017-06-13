@@ -1,21 +1,11 @@
+
 html, body {
 	font-family: Sans-Serif;
   height: 100%;
 }
 
-html,
-body,
-input,
-textarea,
-buttons {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-}
-
 table th {
 	padding: 5px;
-	color: #abcdef;
 }
 
 :fullscreen a {
