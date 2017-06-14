@@ -1,7 +1,11 @@
 
-$mui-primary-color : mui-color('red', '500');
+@import 'node_modules/muicss/lib/sass/mui/_colors.scss';
+
+$mui-primary-color : #ddddaa;
 $mui-primary-color-dark : mui-color('purple', '700');
 $mui-primary-color-light: mui-color('purple', '100');
 $mui-accent-color : mui-color('green', 'A200');
 $mui-accent-color-dark : mui-color('green', 'A100');
 $mui-accent-color-light : mui-color('green', 'A400');
+
+@import 'node_modules/muicss/lib/sass/mui.scss';

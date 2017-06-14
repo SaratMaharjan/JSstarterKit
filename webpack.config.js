@@ -88,6 +88,11 @@ module.exports = {
 				NODE_ENV: '"' + process.env.NODE_ENV + '"'
 			}
 		}),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			Tether: 'jquery',
+		}),
 		new CopyWebpackPlugin([{
 			from: path.join(path.resolve(__dirname, 'src'), 'assets'),
 			to: 'assets'

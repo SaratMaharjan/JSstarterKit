@@ -29,7 +29,11 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap-material-design": "^0.5.10",
+    "jquery": "^3.2.1",
     "muicss": "^0.9.16",
+    "tether": "^1.4.0",
     "vue": "^2.3.3",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
