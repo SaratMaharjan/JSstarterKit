@@ -31,6 +31,7 @@
     "axios": "^0.16.2",
     "bootstrap": "^4.0.0-alpha.6",
     "bootstrap-material-design": "^0.5.10",
+    "daemonite-material": "^4.0.0-alpha.6",
     "jquery": "^3.2.1",
     "muicss": "^0.9.16",
     "tether": "^1.4.0",
