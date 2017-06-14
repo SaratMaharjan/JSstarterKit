@@ -20,7 +20,7 @@ const extractSass = new ExtractTextPlugin({
 module.exports = {
 	target: 'web',
 	entry: {
-		vendor: path.resolve(__dirname, 'src/vendor'),
+		vendor: path.resolve(__dirname, 'src/vendor/vendor'),
 		main: path.resolve(__dirname, 'src/index')
 	},
 	output: {

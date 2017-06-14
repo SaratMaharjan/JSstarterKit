@@ -4,36 +4,8 @@ html, body {
   height: 100%;
 }
 
-table th {
-	padding: 5px;
-}
-
-:fullscreen a {
-	display: flex
-}
-
-a {
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	display: flex;
-}
-
-#sidebar {
+.sidebar {
   background-color: #abcdef;
-  padding: 15px;
+  padding: 5px;
 }
 
-@media (min-width: 768px) {
-  #sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 180px;
-    height: 100%;
-    padding-top: 30px;
-  }
-
-  #content {
-  	margin-left: 180px;
-  }
-}

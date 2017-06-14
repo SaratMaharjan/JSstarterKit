@@ -1,6 +1,6 @@
 <template>
 
-	<div class="mui-panel mui--z2">
+	<div class="card">
 		<p>
 			<slot></slot>
 		</p>
@@ -15,5 +15,12 @@
 </script>
 
 <style scoped>
-
+	.card {
+		display: flex;
+		flex-direction: row;
+		border: 1px solid;
+		background-color: #abcdef;
+		margin: 1px;
+		padding: 1px;
+	}
 </style>
