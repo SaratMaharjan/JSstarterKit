@@ -1,5 +1,5 @@
 <template>
-	<div id="about">
+	<div class="about">
 		<counter></counter>
 	</div>
 </template>
@@ -18,5 +18,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

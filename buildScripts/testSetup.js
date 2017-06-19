@@ -3,4 +3,4 @@
 // require('babel-register')();
 
 // for unused extension
-require.extensions['.css'] = function () {};
+require.extensions['.css'] = function() {};

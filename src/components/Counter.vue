@@ -1,11 +1,11 @@
 <template>
-	<div class="counter" :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }" @mousemove="xCoordinate">
+	<div class="counter" :style="{ backgroundColor: `hsl(${Math.max(50, x%120)}, 80%, 50%)` }" @mousemove="xCoordinate">
 		<p>The Count: {{ count }}</p>
 
 		<p>Pixels across: {{ x }}</p>
 
 		<p>
-			<button class="mui-btn mui-btn-raised mui-btn--primary" @click="count += 1">Increment</button>
+			<button class="btn-primary" @click="count += 1">Increment</button>
 		</p>
 	</div>
 </template>
@@ -24,7 +24,6 @@
 				this.x = e.clientX;
 			}
 		}
-
 	}
 </script>
 

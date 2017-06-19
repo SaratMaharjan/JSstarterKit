@@ -1,7 +1,7 @@
 
 import './css/index.scss';
 
-import { getUsers, deleteUser } from './api/userApi';
+import {getUsers, deleteUser} from './api/userApi';
 import './app';
 
 // import numeral from 'numeral';

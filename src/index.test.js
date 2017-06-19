@@ -1,5 +1,5 @@
-const { describe, it } = require('mocha');
-const { expect } = require('chai');
+const {describe, it} = require('mocha');
+const {expect} = require('chai');
 // cosnt jsdom = require('jsdom');
 // const fs = require('fs');
 
