@@ -20,7 +20,7 @@
 			"no-unused-vars": "warn",
 			"constructor-super": "warn",
 			"valid-typeof": "warn",
-			"semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+			"semi": ["error", "always", {"omitLastInOneLineBlock": true}],
 			"func-names": ["error", "never"],
 			"linebreak-style": ["error", "windows"],
 			"indent": ["error", "tab"],
