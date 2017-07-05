@@ -13,20 +13,21 @@
         "html"
     ],
     "rules": {
+			"arrow-parens":"off",
+			"comma-dangle": "off",
+			"constructor-super": "warn",
+			"func-names": ["error", "never"],
+			"indent": ["error", "tab"],
+			"linebreak-style": ["error", "windows"],
+			"max-len": "off",
 			"no-const-assign": "warn",
 			"no-this-before-super": "warn",
 			"no-undef": "warn",
 			"no-unreachable": "warn",
 			"no-unused-vars": "warn",
-			"constructor-super": "warn",
-			"valid-typeof": "warn",
+			"object-curly-spacing": ["error", "always"],
+			"require-jsdoc": "off",
 			"semi": ["error", "always", {"omitLastInOneLineBlock": true}],
-			"func-names": ["error", "never"],
-			"linebreak-style": ["error", "windows"],
-			"indent": ["error", "tab"],
-			"arrow-parens":"off",
-			"comma-dangle": "off",
-			"max-len": "off",
-			"require-jsdoc": "off"
+			"valid-typeof": "warn"
     }
 }
